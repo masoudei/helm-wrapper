@@ -64,6 +64,7 @@ func main() {
 		helmConfig.UploadPath = defaultUploadPath
 	} else {
 		if !filepath.IsAbs(helmConfig.UploadPath) {
+			glog.Infoln("helmConfig.UploadPath : " + filepath.Dir(helmConfig.UploadPath))
 			glog.Fatalln("charts upload path is not absolute")
 		}
 	}
